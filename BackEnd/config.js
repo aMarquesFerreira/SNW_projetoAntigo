@@ -46,9 +46,9 @@ export default {
       path: "../controllers/NodeController"
     },
     
-    driverType: {
-      name: "DriverTypeController",
-      path: "../controllers/DriverTypeController"
+    user: {
+      name: "UserController",
+      path: "../controllers/UserController"
     },
     
     vehicleType: {
@@ -79,9 +79,9 @@ export default {
       path: "../repositories/NodeRepo"
     },
     
-    driverType: {
-      name: "DriverTypeRepo",
-      path: "../repositories/DriverTypeRepo"
+    user: {
+      name: "UserRepo",
+      path: "../repositories/UserRepo"
     },
     
     vehicleType: {
@@ -107,9 +107,9 @@ export default {
       path: "../services/NodeService"
     },
     
-    driverType: {
-      name: "DriverTypeService",
-      path: "../services/DriverTypeService"
+    user: {
+      name: "UserService",
+      path: "../services/UserService"
     },
     
     vehicleType: {

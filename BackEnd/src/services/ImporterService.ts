@@ -3,7 +3,7 @@ import { Inject, Service } from "typedi";
 import config from "../../config";
 import { Result } from "../core/logic/Result";
 import { IVehicleTypeDTO } from "../dto/IVehicleTypeDTO";
-import IDriverTypeService from "./IServices/IDriverTypeService";
+import IUserService from "./IServices/IUserService";
 import INodeService from "./IServices/INodeService";
 import ISneakersService from "./IServices/ISneakersService";
 import IImporterService from "./IServices/IImporterService";
@@ -11,14 +11,14 @@ import ITravelLineService from "./IServices/ITravelLineService";
 import IVehicleTypeService from "./IServices/IVehicleTypeService";
 import { ITravelLineDTO } from "../dto/ITravelLineDTO";
 import { INodeDTO } from "../dto/INodeDTO";
-import { IDriverTypeDTO } from "../dto/IDriverTypeDTO";
+import { IUserDTO } from "../dto/IUserDTO";
 import ISneakersRepo from "./IRepos/ISneakersRepo";
 import { ISneakersDTO } from "../dto/ISneakersDTO";
 
 @Service()
 export default class ImporterService implements IImporterService {
     constructor(
-        @Inject(config.services.driverType.name) private driverTypeService: IDriverTypeService,
+        @Inject(config.services.user.name) userService: IUserService,
         @Inject(config.services.node.name) private nodeService: INodeService,
         @Inject(config.services.sneakers.name) private sneakersService: ISneakersService,
         @Inject(config.services.travelLine.name) private travelLineService: ITravelLineService,
@@ -34,7 +34,7 @@ export default class ImporterService implements IImporterService {
         var travelLines;
         var nodes;
         var sneakers;
-        var driverTypes;
+        var users;
 
         let xml_string;
         try {
@@ -64,9 +64,9 @@ export default class ImporterService implements IImporterService {
                 console.log('There are no Sneakers in the XML File.')
             }
             try {
-                driverTypes = result['GlDocumentInfo']['world'][0]['GlDocument'][0]['GlDocumentNetwork'][0]['Network'][0]['DriverTypes'][0]['DriverType'];
+                users = result['GlDocumentInfo']['world'][0]['GlDocument'][0]['GlDocumentNetwork'][0]['Network'][0]['Users'][0]['User'];
             } catch (error) {
-                console.log('There are no DriverTypes in the XML File.')
+                console.log('There are no Users in the XML File.')
             }
         });
         await this.importVehicles(vehicleTypes, res, next);
@@ -81,10 +81,10 @@ export default class ImporterService implements IImporterService {
         if (res.statusCode == 402) {
             return;
         }
-        await this.importDriverTypes(driverTypes, res, next);
-        if (res.statusCode == 402) {
-            return;
-        }
+        // await this.importUsers(users, res, next);
+        // if (res.statusCode == 402) {
+        //     return;
+        // }
         // await this.importSneakers(sneakers, res, next);
         // if (res.statusCode == 402) {
         //     return;
@@ -181,23 +181,23 @@ export default class ImporterService implements IImporterService {
         }
     }
 
-    public async importDriverTypes(drivers: any, res: Response, next: NextFunction) {
-        for (let index = 0; index < drivers.length; index++) {
-            try {
-                const driverTypeOrError = await this.driverTypeService.createDriverType({
-                    name: { name: drivers[index].ATTR.Name },
-                    code: { code: drivers[index].ATTR.Code },
-                    description: { description: drivers[index].ATTR.Description },
-                } as IDriverTypeDTO) as Result<IDriverTypeDTO>;
+    // public async importUsers(users: any, res: Response, next: NextFunction) {
+    //     for (let index = 0; index < users.length; index++) {
+    //         try {
+    //             const userOrError = await this.userService.createUser({
+    //                 name: { name: users[index].ATTR.Name },
+    //                 email: { email: users[index].ATTR.Code },
+    //                 description: { description: drivers[index].ATTR.Description },
+    //             } as IUserDTO) as Result<IUserDTO>;
 
-                if (driverTypeOrError.isFailure) {
-                    return res.status(402).send('There was an error in the DriverTypes');
-                }
-            } catch (e) {
-                return res.status(402).send('There was an error in the DriverTypes');
-            }
-        }
-    }
+    //             if (userOrError.isFailure) {
+    //                 return res.status(402).send('There was an error in the Users');
+    //             }
+    //         } catch (e) {
+    //             return res.status(402).send('There was an error in the Users');
+    //         } 
+    //     }
+    // }
 
     // public async importSneakers(sneakers: any, res: Response, next: NextFunction) {
     //     for (let index = 0; index < sneakers.length; index++) {

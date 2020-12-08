@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import driverType from './routes/DriverTypeRoute';
+import user from './routes/UserRoute';
 import node from './routes/NodeRoute';
 import vehicleType from './routes/VehicleTypeRoute';
 import sneakers from './routes/SneakersRoute';
@@ -10,7 +10,7 @@ export default () => {
 	const app = Router();
 
 	node(app);
-	driverType(app);
+	user(app);
 	vehicleType(app);
 	sneakers(app);
 	travelLine(app);

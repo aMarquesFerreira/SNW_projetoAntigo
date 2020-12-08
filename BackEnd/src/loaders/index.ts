@@ -15,9 +15,9 @@ export default async ({ expressApp }) => {
     schema: '../persistence/schemas/NodeSchema',
   };
 
-  const DriverTypeSchema = {
-    name: 'DriverTypeSchema',
-    schema: '../persistence/schemas/DriverTypeSchema',
+  const UserSchema = {
+    name: 'UserSchema',
+    schema: '../persistence/schemas/UserSchema',
 
   };
 
@@ -42,9 +42,9 @@ export default async ({ expressApp }) => {
     path: config.controller.node.path
   }
 
-  const DriverTypeController = {
-    name: config.controller.driverType.name,
-    path: config.controller.driverType.path
+  const UserController = {
+    name: config.controller.user.name,
+    path: config.controller.user.path
   }
 
   const VehicleTypeController = {
@@ -72,9 +72,9 @@ export default async ({ expressApp }) => {
     path: config.repos.node.path
   }
 
-  const DriverTypeRepo = {
-    name: config.repos.driverType.name,
-    path: config.repos.driverType.path
+  const UserRepo = {
+    name: config.repos.user.name,
+    path: config.repos.user.path
   }
   
   const VehicleTypeRepo = {
@@ -97,9 +97,9 @@ export default async ({ expressApp }) => {
     path: config.services.node.path
   }
 
-  const DriverTypeService = {
-    name: config.services.driverType.name,
-    path: config.services.driverType.path
+  const UserService = {
+    name: config.services.user.name,
+    path: config.services.user.path
   }
 
   const VehicleTypeService = {
@@ -126,14 +126,14 @@ export default async ({ expressApp }) => {
     mongoConnection,
     schemas: [
       NodeSchema,
-      DriverTypeSchema,
+      UserSchema,
       VehicleTypeSchema,
       SneakersSchema,
       TravelLineSchema,
     ],
     controllers: [
       NodeController,
-      DriverTypeController,
+      UserController,
       VehicleTypeController,
       SneakersController,
       TravelLineController,
@@ -141,14 +141,14 @@ export default async ({ expressApp }) => {
     ],
     repos: [
       NodeRepo,
-      DriverTypeRepo,
+      UserRepo,
       VehicleTypeRepo,
       SneakersRepo,
       TravelLineRepo,
     ],
     services: [
       NodeService,
-      DriverTypeService,
+      UserService,
       VehicleTypeService,
       SneakersService,
       TravelLineService,
