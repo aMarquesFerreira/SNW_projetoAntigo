@@ -26,9 +26,9 @@ export default async ({ expressApp }) => {
     schema: '../persistence/schemas/VehicleTypeSchema',
   };
 
-  const PathSchema = {
-    name: 'PathSchema',
-    schema: '../persistence/schemas/PathSchema',
+  const SneakersSchema = {
+    name: 'SneakersSchema',
+    schema: '../persistence/schemas/SneakersSchema',
   }
 
   const TravelLineSchema = {
@@ -52,9 +52,9 @@ export default async ({ expressApp }) => {
     path: config.controller.vehicleType.path
   }
 
-  const PathController = {
-    name: config.controller.path.name,
-    path: config.controller.path.path
+  const SneakersController = {
+    name: config.controller.sneakers.name,
+    path: config.controller.sneakers.path
   }
 
   const TravelLineController = {
@@ -82,9 +82,9 @@ export default async ({ expressApp }) => {
     path: config.repos.vehicleType.path
   }
 
-  const PathRepo = {
-    name: config.repos.path.name,
-    path: config.repos.path.path
+  const SneakersRepo = {
+    name: config.repos.sneakers.name,
+    path: config.repos.sneakers.path
   }
   
   const TravelLineRepo = {
@@ -107,9 +107,9 @@ export default async ({ expressApp }) => {
     path: config.services.vehicleType.path
   }
 
-  const PathService = {
-    name: config.services.path.name,
-    path: config.services.path.path
+  const SneakersService = {
+    name: config.services.sneakers.name,
+    path: config.services.sneakers.path
   }
 
   const TravelLineService = {
@@ -128,14 +128,14 @@ export default async ({ expressApp }) => {
       NodeSchema,
       DriverTypeSchema,
       VehicleTypeSchema,
-      PathSchema,
+      SneakersSchema,
       TravelLineSchema,
     ],
     controllers: [
       NodeController,
       DriverTypeController,
       VehicleTypeController,
-      PathController,
+      SneakersController,
       TravelLineController,
       ImporterController,
     ],
@@ -143,14 +143,14 @@ export default async ({ expressApp }) => {
       NodeRepo,
       DriverTypeRepo,
       VehicleTypeRepo,
-      PathRepo,
+      SneakersRepo,
       TravelLineRepo,
     ],
     services: [
       NodeService,
       DriverTypeService,
       VehicleTypeService,
-      PathService,
+      SneakersService,
       TravelLineService,
       ImporterService
     ]

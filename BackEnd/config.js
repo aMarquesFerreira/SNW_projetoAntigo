@@ -56,9 +56,9 @@ export default {
       path: "../controllers/VehicleTypeController"
     },
 
-    path: {
-      name: "PathController",
-      path: "../controllers/PathController"
+    sneakers: {
+      name: "SneakersController",
+      path: "../controllers/SneakersController"
     },
 
     travelLine: {
@@ -89,9 +89,9 @@ export default {
       path: "../repositories/VehicleTypeRepo"
     },
 
-    path: {
-      name: "PathRepo",
-      path: "../repositories/PathRepo"
+    sneakers: {
+      name: "SneakersRepo",
+      path: "../repositories/SneakersRepo"
     },
 
     travelLine: {
@@ -118,8 +118,8 @@ export default {
     },
     
     path: {
-      name: "PathService",
-      path: "../services/PathService"
+      name: "SneakersService",
+      path: "../services/SneakersService"
     },
 
     travelLine: {

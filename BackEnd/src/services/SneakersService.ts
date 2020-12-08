@@ -3,14 +3,14 @@ import config from "../../config";
 import { Result } from "../core/logic/Result";
 import { Sneakers } from "../domain/Sneakers";
 import { ISneakersDTO } from "../dto/ISneakersDTO";
-import { SneakersMap } from "../mappers/Map";
+import { SneakersMap } from "../mappers/SneakersMap";
 import ISneakersRepo from "./IRepos/ISneakersRepo";
 import ISneakersService from "./IServices/ISneakersService";
 
 @Service()
 export default class SneakersService implements ISneakersService { 
     constructor(
-        @Inject(config.repos.path.name) private sneakersRepo: ISneakersRepo
+        @Inject(config.repos.sneakers.name) private sneakersRepo: ISneakersRepo
     ) { }
 
     public async createSneakers(sneakersDTO: ISneakersDTO): Promise<Result<ISneakersDTO>> {
@@ -38,27 +38,39 @@ export default class SneakersService implements ISneakersService {
 
     public async getAllSneakers(): Promise<Result<ISneakersDTO[]>> {
         try {
-            const pathList = this.sneakersRepo.findAll();
+            const sneakersList = this.sneakersRepo.findAll();
 
-            let pathDTOList: ISneakersDTO[] = new Array;
+            let sneakersDTOList: ISneakersDTO[] = new Array;
 
-            (await pathList).forEach(function (value) {
-                pathDTOList.push(SneakersMap.toDTO(value) as ISneakersDTO);                
+            (await sneakersList).forEach(function (value) {
+                sneakersDTOList.push(SneakersMap.toDTO(value) as ISneakersDTO);                
             });
 
-            return Result.ok<ISneakersDTO[]>(pathDTOList)
+            return Result.ok<ISneakersDTO[]>(sneakersDTOList)
         } catch (e) {
             throw e;
         }
     }
     
-    public async getSneakerByCode(sneakerCode: number): Promise<Result<ISneakersDTO>> {
+    public async getSneakersByCode(sneakerCode: string): Promise<Result<ISneakersDTO>> {
         try {
-            const path = await this.sneakersRepo.getSneakerByCode(sneakerCode);
+            const sneakers = await this.sneakersRepo.findSneakersByCode(sneakerCode);
 
-            const pathDTOResult = SneakersMap.toDTO(path) as ISneakersDTO;
+            const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
 
-            return Result.ok<ISneakersDTO>(pathDTOResult);
+            return Result.ok<ISneakersDTO>(sneakersDTOResult);
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    public async getSneakersByCondition(sneakerCondition: string): Promise<Result<ISneakersDTO>> {
+        try {
+            const sneakers = await this.sneakersRepo.findSneakersByCode(sneakerCondition);
+
+            const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
+
+            return Result.ok<ISneakersDTO>(sneakersDTOResult);
         } catch (e) {
             throw e;
         }

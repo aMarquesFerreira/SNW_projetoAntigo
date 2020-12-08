@@ -5,8 +5,9 @@ import { Result } from "../core/logic/Result";
 
 interface SneakersProps {
     code: string;
-    size: number[];
+    size: number;
     name: string;
+    condition: number;
 }
 
 export class Sneakers extends AggregateRoot<SneakersProps> {
@@ -22,11 +23,11 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
         this.props.code = newCode;
     }
 
-    get size(): number[] {
+    get size(): number {
         return this.props.size;
     }
 
-    set size (newSize : number[]) {
+    set size (newSize : number) {
         this.props.size = newSize;
     }
     
@@ -36,6 +37,14 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
 
     set name (newName : string) {
         this.props.name = newName;
+    }
+
+    get condition(): number {
+        return this.props.condition;
+    }
+
+    set condition (newCondition : number) {
+        this.props.condition = newCondition;
     }
 
     private constructor (props : SneakersProps, id? : UniqueEntityID) {
@@ -48,6 +57,7 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
             { argument: props.code, argumentName: 'code'},
             { argument: props.size, argumentName: 'size'},
             { argument: props.name, argumentName: 'name'},
+            { argument: props.condition, argumentName: 'condition'},
         ]
         const guardResult = Guard.againstNullOrUndefinedBulk(guardedProps);
         
