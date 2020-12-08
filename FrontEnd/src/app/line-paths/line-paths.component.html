@@ -1,0 +1,12 @@
+<div>
+    <h2>Line Paths</h2>
+    <ul class="linePaths">
+      <li *ngFor="let linePath of nodepaths">
+        <a routerLink="/paths/{{linePath.id}}">
+          <span class="badge">{{linePath.id}}</span> {{linePath.valor}}
+        </a>
+      </li>
+    </ul>
+    <button routerLink="/paths/newLinePath">Create New</button>
+  </div>
+

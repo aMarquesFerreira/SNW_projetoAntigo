@@ -1,0 +1,39 @@
+<div *ngIf="node">
+    <h2>{{node.shortName}}</h2>
+    <div>
+        <label>Short Name:
+            <input [(ngModel)]="node.shortName" id="shortName" placeholder="Insert short name" />
+        </label>
+    </div>
+    <div>
+        <label>Full Name:
+            <input [(ngModel)]="node.fullName" id="fullName" placeholder="Insert full name" />
+        </label>
+    </div>
+    <div>
+        <label>Latitude:
+            <input [(ngModel)]="node.coordinates.props.latitude" id="latitude" placeholder="Insert latitude" />
+        </label>
+    </div>
+    <div>
+        <label>Longitude:
+            <input [(ngModel)]="node.coordinates.props.longitude" id="longitude" placeholder="Insert longitude" />
+        </label>
+    </div>
+    <div>
+        <label>Is Depot:
+            <input type=checkbox [(ngModel)]="node.isDepot" id="isDepot"/>
+        </label>
+    </div>
+    <div>
+        <label>Is Relief Point:
+            <input type=checkbox [(ngModel)]="node.isReliefPoint" id="isReliefPoint"/>
+        </label>
+    </div>
+    <div>
+        <label>Duration:
+            <input [(ngModel)]="node.crewTravelTime.props.duration" id="duration" placeholder="Insert duration (if none, then 0)" />
+        </label>
+    </div>
+    <button (click)="goBack()">Back</button><div class="divider"></div><button (click)="createNode()">Create</button>
+</div>

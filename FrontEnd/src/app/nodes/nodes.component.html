@@ -1,0 +1,11 @@
+<div>
+  <h2>Nodes</h2>
+  <ul class="nodes">
+    <li *ngFor="let node of nodes">
+      <a routerLink="/node/{{node.shortName}}">
+        <span class="badge">{{node.shortName}}</span> {{node.fullName}}
+      </a>
+    </li>
+  </ul>
+  <button routerLink="/node/newNode">Create New</button>
+</div>

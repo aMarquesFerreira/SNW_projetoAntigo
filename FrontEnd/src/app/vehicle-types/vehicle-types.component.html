@@ -1,0 +1,11 @@
+<div>
+  <h2>Vehicle Types</h2>
+  <ul class="vehicleTypes">
+    <li *ngFor="let vehicleType of vehicleTypes">
+      <a routerLink="/vehicleType/{{vehicleType.vehicleId}}">
+        <span class="badge">{{vehicleType.vehicleId}}</span> {{vehicleType.name}}
+      </a>
+    </li>
+  </ul>
+  <button routerLink="/vehicleType/newVehicleType">Create New</button>
+</div>

@@ -1,0 +1,31 @@
+<!-- <div *ngIf="linePath">
+    <h2 *ngIf="linePath.pathId != undefined">{{linePath.pathId}}</h2>
+    <h2 *ngIf="linePath.pathId == undefined">Create New Path</h2>
+    <div>
+        <label>Path Id:
+            <input [(ngModel)]="linePath.pathId" id="pathId" placeholder="Insert path id" />
+        </label>
+    </div>
+    <div>
+        <label>Is Empty:
+            <input type=checkbox [(ngModel)]="linePath.isEmpty" id="isEmpty"/>
+        </label>
+    </div>
+        <label>Number of Segments:
+            <input [(ngModel)]="linePath.duration" id="duration" placeholder="Insert duration" />
+        </label>
+    </div>
+    <div *ngIf="linePath.pathId == undefined">
+        <label> :
+          <select *ngIf="nodes" [(ngModel)]="terminalNode2">
+            <option *ngFor="let node of nodes" value="{{linePath.shortName}}">{{node.fullName}}</option>
+          </select>
+        </label>
+      </div>
+      <div *ngIf="linePath.name != undefined">
+        <label>Terminal Node 2:
+          <input [(ngModel)]="linePath.terminalNode2" id="terminalNode2" placeholder="Terminal Node 2" />
+        </label>
+      </div>
+    <button (click)="goBack()">Back</button><div class="divider"></div><button (click)="createNode()">Create</button>
+</div> -->

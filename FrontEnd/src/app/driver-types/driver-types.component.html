@@ -1,0 +1,11 @@
+<div>
+  <h2>Driver Types</h2>
+  <ul class="driverTypes">
+    <li *ngFor="let driverType of driverTypes">
+      <a routerLink="/driverType/{{driverType.code}}">
+        <span class="badge">{{driverType.code}}</span> {{driverType.name}}
+      </a>
+    </li>
+  </ul>
+  <button routerLink="/driverType/newDriverType">Create New</button>
+</div>
