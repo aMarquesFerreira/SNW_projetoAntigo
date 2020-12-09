@@ -4,8 +4,7 @@ import { UniqueEntityID } from "../core/domain/UniqueEntityID";
 import { Result } from "../core/logic/Result";
 import { Guard } from "../core/logic/Guard";
 import { Name } from "./Name";
-import { Code } from "./Code";
-import { Description } from "./Description";
+
 
 interface UserProps {
     name: Name;

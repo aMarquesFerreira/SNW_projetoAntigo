@@ -1,7 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
+// import { Request, Response, NextFunction } from 'express';
 
-export default interface IVehicleTypeController  {
-  createVehicleType(req: Request, res: Response, next: NextFunction);
-  getAllVehicleTypes(req: Request, res: Response, next: NextFunction);
-  getVehicleTypeByVehicleId(req: Request, res: Response, next: NextFunction);
-}
+// export default interface IVehicleTypeController  {
+//   createVehicleType(req: Request, res: Response, next: NextFunction);
+//   getAllVehicleTypes(req: Request, res: Response, next: NextFunction);
+//   getVehicleTypeByVehicleId(req: Request, res: Response, next: NextFunction);
+// }

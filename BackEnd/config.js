@@ -41,31 +41,31 @@ export default {
   },
 
   controller: {
-    node: {
-      name: "NodeController",
-      path: "../controllers/NodeController"
-    },
+    // node: {
+    //   name: "NodeController",
+    //   path: "../controllers/NodeController"
+    // },
     
     user: {
       name: "UserController",
       path: "../controllers/UserController"
     },
     
-    vehicleType: {
-      name: "VehicleTypeController",
-      path: "../controllers/VehicleTypeController"
-    },
+    // vehicleType: {
+    //   name: "VehicleTypeController",
+    //   path: "../controllers/VehicleTypeController"
+    // },
 
     sneakers: {
       name: "SneakersController",
       path: "../controllers/SneakersController"
     },
 
-    travelLine: {
-      name: "TravelLineController",
-      path: "../controllers/TravelLineController"
+    // travelLine: {
+    //   name: "TravelLineController",
+    //   path: "../controllers/TravelLineController"
 
-    },
+    // },
     
     import: {
       name: "ImporterController",
@@ -74,59 +74,59 @@ export default {
   },
 
   repos: {
-    node: {
-      name: "NodeRepo",
-      path: "../repositories/NodeRepo"
-    },
+    // node: {
+    //   name: "NodeRepo",
+    //   path: "../repositories/NodeRepo"
+    // },
     
     user: {
       name: "UserRepo",
       path: "../repositories/UserRepo"
     },
     
-    vehicleType: {
-      name: "VehicleTypeRepo",
-      path: "../repositories/VehicleTypeRepo"
-    },
+    // vehicleType: {
+    //   name: "VehicleTypeRepo",
+    //   path: "../repositories/VehicleTypeRepo"
+    // },
 
     sneakers: {
       name: "SneakersRepo",
       path: "../repositories/SneakersRepo"
     },
 
-    travelLine: {
-      name: "TravelLineRepo",
-      path: "../repositories/TravelLineRepo"
+    // travelLine: {
+    //   name: "TravelLineRepo",
+    //   path: "../repositories/TravelLineRepo"
 
-    }
+    // }
   },
 
   services: {
-    node: {
-      name: "NodeService",
-      path: "../services/NodeService"
-    },
+    // node: {
+    //   name: "NodeService",
+    //   path: "../services/NodeService"
+    // },
     
     user: {
       name: "UserService",
       path: "../services/UserService"
     },
     
-    vehicleType: {
-      name: "VehicleTypeService",
-      path: "../services/VehicleTypeService"
-    },
+    // vehicleType: {
+    //   name: "VehicleTypeService",
+    //   path: "../services/VehicleTypeService"
+    // },
     
-    path: {
+    sneakers: {
       name: "SneakersService",
       path: "../services/SneakersService"
     },
 
-    travelLine: {
-      name: "TravelLineService",
-      path: "../services/TravelLineService"
+    // travelLine: {
+    //   name: "TravelLineService",
+    //   path: "../services/TravelLineService"
 
-    },
+    // },
 
     import: {
       name: "ImporterService",
