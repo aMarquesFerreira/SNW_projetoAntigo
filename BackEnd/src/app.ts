@@ -6,7 +6,7 @@ import loaders from './loaders';
 import Logger from './loaders/logger';
 
 async function startServer() {
-    Logger.info("Starting Master Data Rede");
+    Logger.info("Starting Back End");
     const app = express();
 
     await loaders({expressApp: app});
@@ -16,7 +16,7 @@ async function startServer() {
     server.on('listening', onListening);
 
     function onError(error) {
-        Logger.error(`MDR: ${error}`);
+        Logger.error(`Back End: ${error}`);
         process.exit(1);
     }
 

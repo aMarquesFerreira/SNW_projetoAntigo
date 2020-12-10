@@ -12,12 +12,16 @@ export default (app: Router) => {
 
     const sneakersController = Container.get(config.controller.sneakers.name) as ISneakersController;
 
-    route.post('', 
+    route.post('',
         celebrate({
             body: Joi.object({
                 name: Joi.string().required().alphanum().min(1).error(new Error('Name is missing')),
-                size: Joi.number().required().positive().error(new Error('Size is missing')),
-                condition: Joi.number().required().positive().max(10).error(new Error('Condition is missing')),
+                size: Joi.array().items({
+                    size: Joi.string().required(),
+                }).required(),
+                condition: Joi.array().items({
+                    condition: Joi.string().required(),
+                }).required(),
             })
         }),
         (req, res, next) => sneakersController.createSneakers(req, res, next)

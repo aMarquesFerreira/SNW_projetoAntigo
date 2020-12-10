@@ -1,5 +1,5 @@
 export interface ISneakersPersistence {
     name: string;
-    size: number;
-    condition: number;
+    size: string[];
+    condition: string[];
 }

@@ -31,7 +31,6 @@ export default class SneakersRepo implements ISneakersRepo {
                 
                 return SneakersMap.toDomain(sneakersCreated);
             }else{
-                sneakersDocument.id = sneakers.id;
                 sneakersDocument.name = sneakers.name;
                 sneakersDocument.size = sneakers.size;
                 sneakersDocument.condition = sneakers.condition;                
@@ -73,7 +72,7 @@ export default class SneakersRepo implements ISneakersRepo {
     }
 
     
-    public async findSneakersByCondition(condition: number): Promise<Sneakers> {
+    public async findSneakersByCondition(condition: string): Promise<Sneakers> {
         const query = { condition: condition };
 
         const sneakersDocument = await this.SneakersSchema.findOne(query);
@@ -83,7 +82,7 @@ export default class SneakersRepo implements ISneakersRepo {
 
     }
 
-    public async findSneakersBySize(size: number): Promise<Sneakers> {
+    public async findSneakersBySize(size: string): Promise<Sneakers> {
         const query = { size: size };
 
         const sneakersDocument = await this.SneakersSchema.findOne(query);
