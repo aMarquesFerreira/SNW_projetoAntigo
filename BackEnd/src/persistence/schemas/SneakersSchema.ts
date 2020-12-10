@@ -3,12 +3,6 @@ import { ISneakersPersistence } from "../../dataschema/ISneakersPersistence";
 
 const SneakersSchema = new mongoose.Schema(
     {
-        code: {
-            type: String,
-            required: [true, 'Please enter code'],
-            index: true,
-        },
-
         name: {
             type: String,
             required: [true, 'Please enter name'],

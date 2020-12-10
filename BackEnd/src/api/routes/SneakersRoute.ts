@@ -15,7 +15,6 @@ export default (app: Router) => {
     route.post('', 
         celebrate({
             body: Joi.object({
-                code: Joi.string().required().alphanum().min(1).error(new Error('Code is missing')),
                 name: Joi.string().required().alphanum().min(1).error(new Error('Name is missing')),
                 size: Joi.number().required().positive().error(new Error('Size is missing')),
                 condition: Joi.number().required().positive().max(10).error(new Error('Condition is missing')),
@@ -26,5 +25,5 @@ export default (app: Router) => {
 
     route.get('', (req, res, next) => sneakersController.getAllSneakers(req, res, next));
 
-    route.get('/:code', (req, res, next) => sneakersController.getSneakersByCode(req, res, next));
+    route.get('/:code', (req, res, next) => sneakersController.getSneakersByName(req, res, next));
 }
