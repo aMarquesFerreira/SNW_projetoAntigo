@@ -52,9 +52,9 @@ export default class SneakersService implements ISneakersService {
         }
     }
     
-    public async getSneakersByCode(sneakerCode: string): Promise<Result<ISneakersDTO>> {
+    public async getSneakersByName(sneakerName: string): Promise<Result<ISneakersDTO>> {
         try {
-            const sneakers = await this.sneakersRepo.findSneakersByCode(sneakerCode);
+            const sneakers = await this.sneakersRepo.findSneakersByName(sneakerName);
 
             const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
 
@@ -66,7 +66,7 @@ export default class SneakersService implements ISneakersService {
 
     public async getSneakersByCondition(sneakerCondition: string): Promise<Result<ISneakersDTO>> {
         try {
-            const sneakers = await this.sneakersRepo.findSneakersByCode(sneakerCondition);
+            const sneakers = await this.sneakersRepo.findSneakersByName(sneakerCondition);
 
             const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
 

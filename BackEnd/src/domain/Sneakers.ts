@@ -4,7 +4,6 @@ import { Guard } from "../core/logic/Guard";
 import { Result } from "../core/logic/Result";
 
 interface SneakersProps {
-    code: string;
     size: number;
     name: string;
     condition: number;
@@ -13,14 +12,6 @@ interface SneakersProps {
 export class Sneakers extends AggregateRoot<SneakersProps> {
     get id (): UniqueEntityID {
         return this._id;
-    }
-
-    get code(): string {
-        return this.props.code;
-    }
-
-    set code (newCode : string) {
-        this.props.code = newCode;
     }
 
     get size(): number {
@@ -54,7 +45,6 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
     public static create(props : SneakersProps, id? : UniqueEntityID) {
 
         const guardedProps = [
-            { argument: props.code, argumentName: 'code'},
             { argument: props.size, argumentName: 'size'},
             { argument: props.name, argumentName: 'name'},
             { argument: props.condition, argumentName: 'condition'},

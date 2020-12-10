@@ -20,7 +20,7 @@ export default class SneakersRepo implements ISneakersRepo {
     }
 
     public async save(sneakers: Sneakers): Promise<Sneakers> {
-        const query = { code: sneakers.code };
+        const query = { id: sneakers.id };
 
         const sneakersDocument = await this.SneakersSchema.findOne(query);
 
@@ -31,7 +31,7 @@ export default class SneakersRepo implements ISneakersRepo {
                 
                 return SneakersMap.toDomain(sneakersCreated);
             }else{
-                sneakersDocument.code = sneakers.code;
+                sneakersDocument.id = sneakers.id;
                 sneakersDocument.name = sneakers.name;
                 sneakersDocument.size = sneakers.size;
                 sneakersDocument.condition = sneakers.condition;                
@@ -44,7 +44,7 @@ export default class SneakersRepo implements ISneakersRepo {
     }
 
     public async exists(sneakers: Sneakers): Promise<boolean> {
-        const query = { code : sneakers.code };
+        const query = { id : sneakers.id };
         const sneakersDocument = await this.SneakersSchema.findOne(query);
 
         return !!sneakersDocument === true;
@@ -62,8 +62,8 @@ export default class SneakersRepo implements ISneakersRepo {
         return Promise.all(sneakersList);
     }
 
-    public async findSneakersByCode(code: string): Promise<Sneakers> {
-        const query = { code: code };
+    public async findSneakersByName(name: string): Promise<Sneakers> {
+        const query = { name: name };
 
         const sneakersDocument = await this.SneakersSchema.findOne(query);
 
