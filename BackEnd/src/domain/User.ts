@@ -7,7 +7,7 @@ import { Name } from "./Name";
 
 
 interface UserProps {
-    name: Name;
+    name: string;
     email: string;
     age: Date;
     size: number;
@@ -21,7 +21,7 @@ export class User extends AggregateRoot<UserProps> {
         return this._id;
     }
 
-    get name (): Name {
+    get name (): string {
         return this.props.name;
     }
 
@@ -33,7 +33,7 @@ export class User extends AggregateRoot<UserProps> {
         return this.props.email;
     }
 
-    set name (value: Name) {
+    set name (value: string) {
         this.props.name = value;
     }
 

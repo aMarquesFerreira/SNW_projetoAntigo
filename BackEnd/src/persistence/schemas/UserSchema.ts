@@ -5,7 +5,7 @@ import { Name } from "../../domain/Name";
 const UserSchema = new mongoose.Schema(
     {
         name:{
-            type: Name,
+            type: String,
             required: [true, 'Please enter a name'],
             index: true,
         },

@@ -1,7 +1,7 @@
 import { Name } from "../domain/Name";
 
 export interface IUserPersistence {
-    name: Name;
+    name: string;
     email: string;
     age: Date;
     size: number;

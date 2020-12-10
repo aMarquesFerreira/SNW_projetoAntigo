@@ -35,7 +35,7 @@ export class UserMap extends Mapper<User> {
 
     public static toPersistence(user: User): any {
         const d = {
-            name: user.name.name,
+            name: user.name,
             email: user.email,
             age: user.age,
             size: user.size,
