@@ -15,11 +15,11 @@ export default (app: Router) => {
         celebrate({
             body: Joi.object({
                 name: Joi.string().required().min(1).error(new Error('Name is missing')),
-                email: Joi.string().required().alphanum().min(1).error(new Error('Email is missing')),
+                email: Joi.string().required().min(1).error(new Error('Email is missing')),
                 age: Joi.number().required().positive().error(new Error('Age is missing')),
                 size: Joi.number().required().positive().error(new Error('Size is missing')),
                 address: Joi.string().required().min(3).error(new Error('Address is missing')),
-                postalCode: Joi.string().required().alphanum().min(1).error(new Error('Postal Code is missing')),
+                postalCode: Joi.string().required().min(1).error(new Error('Postal Code is missing')),
                 password: Joi.string().required().min(4).error(new Error('Password is missing or too short')),
 
             })

@@ -8,7 +8,7 @@ interface UserProps {
     name: string;
     email: string;
     age: Date;
-    size: number[];
+    size: number;
     address: string;
     postalCode: string;
     password: string;
@@ -43,11 +43,11 @@ export class User extends AggregateRoot<UserProps> {
         this.props.email = value;
     }
 
-    get size(): number[] {
+    get size(): number {
         return this.props.size;
     }
 
-    set size (newSize : number[]) {
+    set size (newSize : number) {
         this.props.size = newSize;
     }
 

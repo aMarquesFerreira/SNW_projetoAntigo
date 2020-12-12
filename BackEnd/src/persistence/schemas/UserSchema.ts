@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema(
             index: true,
         },
         size:{
-            type: Array,
+            type: Number,
             required: [true, 'Please enter your size'],
             index: true,
         },

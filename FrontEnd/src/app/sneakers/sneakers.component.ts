@@ -18,6 +18,6 @@ export class SneakersComponent implements OnInit {
 
   getSneakers(): void {
     this.sneakersService.getSneakers()
-    .subscribe(sneakers => this.sneakers = sneakers);
+      .subscribe(sneakers => this.sneakers = sneakers);
   }
 }

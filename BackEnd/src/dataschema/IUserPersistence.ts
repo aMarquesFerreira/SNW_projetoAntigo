@@ -2,7 +2,7 @@ export interface IUserPersistence {
     name: string;
     email: string;
     age: Date;
-    size: number[];
+    size: number;
     address: string;
     postalCode: string;
     password: string;
