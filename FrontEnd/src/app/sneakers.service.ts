@@ -24,6 +24,7 @@ export class SneakersService {
     this.http.post('http://localhost:2525/api/sneakers',
       {
         "name": newname
+          
       })
       .subscribe(
         (val) => {

@@ -1,1 +1,12 @@
-<p>sneakers works!</p>
+<div>
+    <h2>Sneakers</h2>
+    <ul class="sneakers">
+      <li *ngFor="let sneaker of sneakers">
+        <a routerLink="/sneakers/{{sneakers.name}}">
+          <span class="badge">{{sneakers.name}}</span> 
+        </a>
+      </li>
+    </ul>
+    <button routerLink="/sneakers/newSneakers">Create New</button>
+  </div>
+  
