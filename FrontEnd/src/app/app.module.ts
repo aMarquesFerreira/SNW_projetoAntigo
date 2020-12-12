@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LinePathsComponent } from './line-paths/line-paths.component';
 import { LinePathsDetailComponent } from './line-paths-detail/line-paths-detail.component';
 import { MapComponent } from './map/map.component';
+import { SneakersComponent } from './sneakers/sneakers.component';
+import { SneakersDetailComponent } from './sneakers-detail/sneakers-detail.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MapComponent } from './map/map.component';
     LinePathsComponent,
     LinePathsDetailComponent,
     MapComponent,
+    SneakersComponent,
+    SneakersDetailComponent,
   ],
   imports: [
     BrowserModule,
