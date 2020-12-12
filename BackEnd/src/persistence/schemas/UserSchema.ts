@@ -1,6 +1,5 @@
 import { IUserPersistence } from "../../dataschema/IUserPersistence";
 import mongoose from "mongoose";
-import { Name } from "../../domain/Name";
 
 const UserSchema = new mongoose.Schema(
     {
@@ -22,7 +21,7 @@ const UserSchema = new mongoose.Schema(
             index: true,
         },
         size:{
-            type: Number,
+            type: Array,
             required: [true, 'Please enter your size'],
             index: true,
         },

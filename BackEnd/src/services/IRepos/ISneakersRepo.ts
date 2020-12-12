@@ -5,6 +5,6 @@ export default interface ISneakersRepo extends Repo<Sneakers> {
     save(sneaker: Sneakers): Promise<Sneakers>;
     findAll(): Promise<Sneakers[]>;
     findSneakersByName(name: string): Promise<Sneakers>;
-    findSneakersByCondition(condition: string): Promise<Sneakers>;
-    findSneakersBySize(condition: string): Promise<Sneakers>;
+    findSneakersByCondition(condition: number): Promise<Sneakers>;
+    findSneakersBySize(condition: number): Promise<Sneakers>;
 }

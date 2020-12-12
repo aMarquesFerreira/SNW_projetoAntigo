@@ -3,14 +3,12 @@ import { AggregateRoot } from "../core/domain/AggregateRoot";
 import { UniqueEntityID } from "../core/domain/UniqueEntityID";
 import { Result } from "../core/logic/Result";
 import { Guard } from "../core/logic/Guard";
-import { Name } from "./Name";
-
 
 interface UserProps {
     name: string;
     email: string;
     age: Date;
-    size: number;
+    size: number[];
     address: string;
     postalCode: string;
     password: string;
@@ -45,11 +43,11 @@ export class User extends AggregateRoot<UserProps> {
         this.props.email = value;
     }
 
-    get size(): number {
+    get size(): number[] {
         return this.props.size;
     }
 
-    set size (newSize : number) {
+    set size (newSize : number[]) {
         this.props.size = newSize;
     }
 

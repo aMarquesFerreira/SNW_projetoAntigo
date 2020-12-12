@@ -1,5 +1,5 @@
 export interface ISneakersDTO {
-    size: string[];
+    size: number[];
     name: string;
-    condition: string[]
+    condition: number[]
 }

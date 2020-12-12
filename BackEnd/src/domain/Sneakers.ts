@@ -4,9 +4,9 @@ import { Guard } from "../core/logic/Guard";
 import { Result } from "../core/logic/Result";
 
 interface SneakersProps {
-    size: string[];
+    size: number[];
     name: string;
-    condition: string[];
+    condition: number[];
 }
 
 export class Sneakers extends AggregateRoot<SneakersProps> {
@@ -14,11 +14,11 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
         return this._id;
     }
 
-    get size(): string[] {
+    get size(): number[] {
         return this.props.size;
     }
 
-    set size (newSize : string[]) {
+    set size (newSize : number[]) {
         this.props.size = newSize;
     }
     
@@ -30,11 +30,11 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
         this.props.name = newName;
     }
 
-    get condition(): string[] {
+    get condition(): number[] {
         return this.props.condition;
     }
 
-    set condition (newCondition : string[]) {
+    set condition (newCondition : number[]) {
         this.props.condition = newCondition;
     }
 
