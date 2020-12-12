@@ -51,7 +51,6 @@ export default class SneakersRepo implements ISneakersRepo {
 
     public async findAll(): Promise<Sneakers[]> {
         const sneakersDocumentList = await this.SneakersSchema.find();
-
         var sneakersList: Sneakers[] = new Array;
         for (let i = 0; i < sneakersDocumentList.length; i++) {
             let sneakers = await SneakersMap.toDomain(sneakersDocumentList[i]);

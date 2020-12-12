@@ -23,9 +23,9 @@ export default class SneakersService implements ISneakersService {
 
             const sneakersResult = sneakerOrError.getValue();
 
-            await this.sneakersRepo.save(sneakersResult);
+            const dbResult = await this.sneakersRepo.save(sneakersResult);
 
-            const sneakersDTOResult = SneakersMap.toDTO(sneakersResult) as ISneakersDTO;
+            const sneakersDTOResult = SneakersMap.toDTO(dbResult) as ISneakersDTO;
             return Result.ok<ISneakersDTO>(sneakersDTOResult)            
         }catch (e) {
             throw e;
@@ -39,7 +39,7 @@ export default class SneakersService implements ISneakersService {
     public async getAllSneakers(): Promise<Result<ISneakersDTO[]>> {
         try {
             const sneakersList = this.sneakersRepo.findAll();
-
+            console.log("Teste 1");
             let sneakersDTOList: ISneakersDTO[] = new Array;
 
             (await sneakersList).forEach(function (value) {

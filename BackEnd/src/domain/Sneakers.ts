@@ -45,9 +45,7 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
     public static create(props : SneakersProps, id? : UniqueEntityID) {
 
         const guardedProps = [
-            { argument: props.size, argumentName: 'size'},
             { argument: props.name, argumentName: 'name'},
-            { argument: props.condition, argumentName: 'condition'},
         ]
         const guardResult = Guard.againstNullOrUndefinedBulk(guardedProps);
         
