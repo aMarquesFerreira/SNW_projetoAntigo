@@ -12,16 +12,16 @@ export class SneakersService {
 
   getSneakers(): Observable<any> {
     this.messageService.add('Fetched sneakers');
-    return this.http.get('http://localhost:2525/api/sneakers');
+    return this.http.get('http://localhost:3030/api/sneakers');
   }
 
   getSneaker(name: string): Observable<any> {
     this.messageService.add('Fetched sneakers name=${name}');
-    return this.http.get('http://localhost:2525/api/sneakers/' + name);
+    return this.http.get('http://localhost:3030/api/sneakers/' + name);
   }
 
   createSneakers(newname: string): void {
-    this.http.post('http://localhost:2525/api/sneakers',
+    this.http.post('http://localhost:3030/api/sneakers',
       {
         "name": newname
           
