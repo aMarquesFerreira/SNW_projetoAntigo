@@ -22,6 +22,12 @@ const SneakersSchema = new mongoose.Schema(
             index: true,
             default: [1,2,3,4,5,6,7,8,9,10]
         },
+
+        url: {
+            type: String,
+            required: [true, 'Please enter url'],
+            index: true,
+        }, 
     }
 );
 

@@ -7,6 +7,7 @@ interface SneakersProps {
     size: number[];
     name: string;
     condition: number[];
+    url: string;
 }
 
 export class Sneakers extends AggregateRoot<SneakersProps> {
@@ -37,6 +38,14 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
     set condition (newCondition : number[]) {
         this.props.condition = newCondition;
     }
+    
+    get url(): string {
+        return this.props.url;
+    }
+
+    set url (newUrl : string) {
+        this.props.url = newUrl;
+    }
 
     private constructor (props : SneakersProps, id? : UniqueEntityID) {
         super(props, id);
@@ -46,6 +55,7 @@ export class Sneakers extends AggregateRoot<SneakersProps> {
 
         const guardedProps = [
             { argument: props.name, argumentName: 'name'},
+            { argument: props.url, argumentName: 'url'},
         ]
         const guardResult = Guard.againstNullOrUndefinedBulk(guardedProps);
         

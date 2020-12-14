@@ -27,7 +27,6 @@ export default class UserService implements IUserService {
             const userResult = userOrError.getValue();
 
             await this.userRepo.save(userResult);
-
             const userDTOResult =UserMap.toDTO(userResult) as IUserDTO;
             return Result.ok<IUserDTO>(userDTOResult)
         } catch (e) {

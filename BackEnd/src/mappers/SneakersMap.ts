@@ -10,6 +10,7 @@ export class SneakersMap extends Mapper<Sneakers> {
             name: sneakers.name,
             size: sneakers.size,
             condition: sneakers.condition,
+            url: sneakers.url,
         } as ISneakersDTO;
     }
 
@@ -18,6 +19,7 @@ export class SneakersMap extends Mapper<Sneakers> {
             name: raw.name,
             size: raw.size,
             condition: raw.condition,
+            url: raw.url,
         }, new UniqueEntityID(raw.code))
 
         sneakersOrError.isFailure ? console.log(sneakersOrError.error) : '';
@@ -30,6 +32,7 @@ export class SneakersMap extends Mapper<Sneakers> {
             name: sneakers.name,
             size: sneakers.size,
             condition: sneakers.condition,
+            url: sneakers.url,
         }
         return p;
     }

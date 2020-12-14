@@ -16,6 +16,7 @@ export default (app: Router) => {
         celebrate({
             [Segments.BODY]: {
                 name: Joi.string().required().min(1),
+                url: Joi.string().required().min(1),
             }
         }),
         (req, res, next) => sneakersController.createSneakers(req, res, next)

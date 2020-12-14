@@ -60,7 +60,7 @@ export class User extends AggregateRoot<UserProps> {
     }
 
     get postalCode(): string {
-        return this.props.address;
+        return this.props.postalCode;
     }
 
     set postalCode (value : string) {
@@ -99,6 +99,7 @@ export class User extends AggregateRoot<UserProps> {
             const user = new User({
                 ...props
             }, id);
+            console.log(user)
             return Result.ok<User>(user);
         }
     }

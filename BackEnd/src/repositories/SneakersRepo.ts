@@ -34,6 +34,7 @@ export default class SneakersRepo implements ISneakersRepo {
                 sneakersDocument.name = sneakers.name;
                 sneakersDocument.size = sneakers.size;
                 sneakersDocument.condition = sneakers.condition;                
+                sneakersDocument.url = sneakers.url;                
                 await sneakersDocument.save();
                 return sneakers;
             }
