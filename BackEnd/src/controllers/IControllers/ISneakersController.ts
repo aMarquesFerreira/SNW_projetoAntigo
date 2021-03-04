@@ -6,4 +6,5 @@ export default interface ISneakersController  {
   getAllSneakers(req: Request, res: Response, next: NextFunction);
   getSneakersByName(req: Request, res: Response, next: NextFunction);
   getSneakersByCondition(req: Request, res: Response, next: NextFunction);
+  getSneakersBySize(req: Request, res: Response, next: NextFunction);
 }

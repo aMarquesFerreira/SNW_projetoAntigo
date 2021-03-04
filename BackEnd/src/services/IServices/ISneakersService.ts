@@ -6,5 +6,6 @@ export default interface ISneakersService {
     updateSneakers(sneakersDTO: ISneakersDTO): Promise<Result<ISneakersDTO>>;
     getAllSneakers(): Promise<Result<ISneakersDTO[]>>;
     getSneakersByName(name: string): Promise<Result<ISneakersDTO>>;
-    getSneakersByCondition(condition: string): Promise<Result<ISneakersDTO>>;
+    getSneakersByCondition(condition: Number): Promise<Result<ISneakersDTO>>;
+    getSneakersBySize(size: Number): Promise<Result<ISneakersDTO>>;
 }

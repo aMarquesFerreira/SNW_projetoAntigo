@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SneakersComponent } from './sneakers/sneakers.component';
 import { SneakersDetailComponent } from './sneakers-detail/sneakers-detail.component';
+import { PersonalizedComponent } from './personalized/personalized.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SneakersDetailComponent } from './sneakers-detail/sneakers-detail.compo
     MessagesComponent,
     SneakersComponent,
     SneakersDetailComponent,
+    PersonalizedComponent,
   ],
   imports: [
     BrowserModule,
