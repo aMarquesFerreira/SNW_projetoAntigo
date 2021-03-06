@@ -62,7 +62,26 @@ export default class SneakersController implements ISneakersController {
 
     public async getSneakersByCondition(req: Request, res: Response, next: NextFunction){
         try {
-            const sneakersOrError = await this.sneakersServiceInstance.getSneakersByCondition(req.params.condition.toString()) as Result<ISneakersDTO>;
+            
+            let parametro : Number = +(req.params.condition);
+            const sneakersOrError = await this.sneakersServiceInstance.getSneakersByCondition(parametro) as Result<ISneakersDTO>;
+
+            if (sneakersOrError.isFailure) {
+                return res.status(402).send();
+            }
+
+            const sneakersDTO = sneakersOrError.getValue();
+            return res.status(201).json(sneakersDTO);
+        }catch (e) {
+            return next(e);
+        } 
+    }; 
+
+    public async getSneakersBySize(req: Request, res: Response, next: NextFunction){
+        try {
+
+            let parametro : Number = +(req.params.size);
+            const sneakersOrError = await this.sneakersServiceInstance.getSneakersBySize(parametro) as Result<ISneakersDTO>;
 
             if (sneakersOrError.isFailure) {
                 return res.status(402).send();

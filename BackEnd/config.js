@@ -41,96 +41,68 @@ export default {
   },
 
   controller: {
-    // node: {
-    //   name: "NodeController",
-    //   path: "../controllers/NodeController"
-    // },
     
     user: {
       name: "UserController",
       path: "../controllers/UserController"
     },
     
-    // vehicleType: {
-    //   name: "VehicleTypeController",
-    //   path: "../controllers/VehicleTypeController"
-    // },
-
     sneakers: {
       name: "SneakersController",
       path: "../controllers/SneakersController"
     },
-
-    // travelLine: {
-    //   name: "TravelLineController",
-    //   path: "../controllers/TravelLineController"
-
-    // },
     
     import: {
       name: "ImporterController",
       path: "../controllers/ImporterController"
+    },
+
+    personalized: {
+      name: "PersonalizedController",
+      path:"../controllers/PersonalizedController"
     }
   },
 
   repos: {
-    // node: {
-    //   name: "NodeRepo",
-    //   path: "../repositories/NodeRepo"
-    // },
     
     user: {
       name: "UserRepo",
       path: "../repositories/UserRepo"
     },
     
-    // vehicleType: {
-    //   name: "VehicleTypeRepo",
-    //   path: "../repositories/VehicleTypeRepo"
-    // },
-
     sneakers: {
       name: "SneakersRepo",
       path: "../repositories/SneakersRepo"
     },
 
-    // travelLine: {
-    //   name: "TravelLineRepo",
-    //   path: "../repositories/TravelLineRepo"
+    personalized: {
+      name: "PersonalizedRepo",
+      path:"../controllers/PersonalizedRepo"
+    },
 
-    // }
   },
 
   services: {
-    // node: {
-    //   name: "NodeService",
-    //   path: "../services/NodeService"
-    // },
-    
+
     user: {
       name: "UserService",
       path: "../services/UserService"
     },
     
-    // vehicleType: {
-    //   name: "VehicleTypeService",
-    //   path: "../services/VehicleTypeService"
-    // },
     
     sneakers: {
       name: "SneakersService",
       path: "../services/SneakersService"
     },
 
-    // travelLine: {
-    //   name: "TravelLineService",
-    //   path: "../services/TravelLineService"
-
-    // },
-
     import: {
       name: "ImporterService",
       path: "../services/ImporterService"
-    }
+    },
+
+    personalized: {
+      name: "PersonalizedService",
+      path:"../controllers/PersonalizedService"
+    },
   },
 };

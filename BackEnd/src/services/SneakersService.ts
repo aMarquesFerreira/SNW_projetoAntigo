@@ -39,7 +39,6 @@ export default class SneakersService implements ISneakersService {
     public async getAllSneakers(): Promise<Result<ISneakersDTO[]>> {
         try {
             const sneakersList = this.sneakersRepo.findAll();
-            console.log("Teste 1");
             let sneakersDTOList: ISneakersDTO[] = new Array;
 
             (await sneakersList).forEach(function (value) {
@@ -64,9 +63,21 @@ export default class SneakersService implements ISneakersService {
         }
     }
 
-    public async getSneakersByCondition(sneakerCondition: string): Promise<Result<ISneakersDTO>> {
+    public async getSneakersByCondition(condition: Number): Promise<Result<ISneakersDTO>> {
         try {
-            const sneakers = await this.sneakersRepo.findSneakersByName(sneakerCondition);
+            const sneakers = await this.sneakersRepo.findSneakersByCondition(condition);
+
+            const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
+
+            return Result.ok<ISneakersDTO>(sneakersDTOResult);
+        } catch (e) {
+            throw e;
+        }
+    }
+
+    public async getSneakersBySize(size: Number): Promise<Result<ISneakersDTO>> {
+        try {
+            const sneakers = await this.sneakersRepo.findSneakersBySize(size);
 
             const sneakersDTOResult = SneakersMap.toDTO(sneakers) as ISneakersDTO;
 
