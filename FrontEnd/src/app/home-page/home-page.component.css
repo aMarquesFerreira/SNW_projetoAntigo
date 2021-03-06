@@ -1,0 +1,168 @@
+
+#shopCart img{
+
+    height: 30px;
+
+}
+
+#shopCart{
+
+    margin: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#homepage {
+    background-color: #F2F1F0;
+
+}
+
+/* sticky header */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+}
+
+
+
+#homepage.sticky{
+    
+    background-color: transparent;
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
+
+/* fim sticky header */
+
+#homepage nav{
+
+    margin: 20px;
+}
+
+.divLogo{
+
+    margin: 20px;
+}
+
+#logo p{
+
+    font-size: 30px;  
+}
+
+
+#logo {
+
+    text-decoration: none;
+    font-family: 'Playfair Display', serif; 
+    color: black;
+}
+
+
+#homepage nav a {
+
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+
+
+#homepage nav a:hover {
+
+    color: #BEB09C;
+
+}
+
+
+#shopCart{
+    grid-column: 6/7;
+}
+
+
+.bg {
+    /* The image used */
+    background-image: url(C:\Users\andre\Documents\sneakers_project\FrontEnd\src\images\fotoCapaTest3.jpg);
+
+    /* Full height */
+    height: 100vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+
+}
+
+#tituloHome{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 70%;
+}
+
+#tituloHome h1{
+    color: white;
+    font-size: 80px;
+    font-family: 'Playfair Display', serif;
+}
+
+#tituloHome h2{
+
+    margin-bottom: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button1 {
+    background-color: black;
+    color: white;
+    border: none; 
+    padding: 15px 52px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black;
+    align-self: center;
+}
+
+.button1:hover{
+
+    background-color: #BEB09C;
+
+
+}
+
+
+#grelha {
+    width: 90%;
+    margin: 0 auto;
+    /* limite máximo de crescimento da janela */
+    max-width: 1280px;
+    padding: 0 1vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2.5vw;
+    /*    align-items: start;*/
+
+}
+
+.teste{
+
+    height: 2000px;
+}
